@@ -21,7 +21,7 @@ def main():
                 """)
     st.info("The experience from the workflow is the best when all the pages are navigated in sequence!")
     st.subheader("Source code")
-    st.markdown("It can be found via navigating to the menu in the top right corner and pressing 'View App Source' or by using [this link](https://github.com/...).")
+    st.markdown("It can be found via navigating to the menu in the top right corner and pressing 'View App Source' or by using [this link](https://github.com/alanchn31/supply-chain-analytics-app/tree/main).")
     st.write("""
              Note that you will need to upload a CSV file with these columns present:
              - sku: ID of the product

@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.express as px # interactive charts
+from welcome_page import welcome
 from sales_dashboard_page import sales_dashboard
 from operations_dashboard_page import operations_dashboard
 
@@ -36,11 +37,14 @@ if uploaded_file is not None:
         st.warning("No data available based on the current filter settings!")
         st.stop() # This will halt the app from further execution.
 
-    menu = ['Sales Dashboard','Operations Dashboard']
+    menu = ['Welcome Page', 'Sales Dashboard','Operations Dashboard']
     navigation = st.sidebar.selectbox(label="Select menu", options=menu)
 
     # Runs 'Sales Dashboard' app
-    if navigation == 'Sales Dashboard':
+    if navigation == 'Welcome Page':
+        with st.container():
+            welcome.main()
+    elif navigation == 'Sales Dashboard':
         with st.container():
             sales_dashboard.render(df_selection)
     elif navigation == 'Operations Dashboard':
